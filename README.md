@@ -1,4 +1,4 @@
-## Fitness Tracker Data Analysis
+# Fitness Tracker Data Analysis
 <font size="5"># Overview</font>
 This Jupyter Notebook contains a comprehensive data analysis of fitness tracking data. The project explores various aspects of user fitness activities, including calories burned, steps taken, sleep patterns, and how these metrics relate to different demographic factors and activity types.
 
