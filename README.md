@@ -1,73 +1,119 @@
-📊 Fitness Data Analysis Notebook
+Fitness Tracker Data Analysis
+Overview
+This Jupyter Notebook contains a comprehensive data analysis of fitness tracking data. The project explores various aspects of user fitness activities, including calories burned, steps taken, sleep patterns, and how these metrics relate to different demographic factors and activity types.
 
-This project analyzes a randomly generated fitness dataset to explore user activity patterns, clean timestamp information, extract new time-based features, and visualize trends. The analysis is performed entirely in Python using Pandas, NumPy, Matplotlib, and Plotly.
+Dataset Information
+The dataset contains 200 records with the following columns:
 
-📁 Project Overview
+record_id: Unique identifier for each record
 
-The notebook performs the following tasks:
+timestamp: Date and time of the activity record
 
-1. Data Loading
+user_id: Unique identifier for each user
 
-Reads the dataset from random_fitness_dataset.csv.
+age: User's age
 
-Displays the first few rows for a quick preview.
+gender: User's gender (Male, Female, Other)
 
-2. Data Exploration
+activity_type: Type of physical activity (Cycling, Strength Training, Swimming, Yoga, HIIT, Walking, Running)
 
-Uses:
+duration_min: Duration of activity in minutes
 
-info() to inspect data types and structure
+calories_burned: Calories burned during the activity
 
-describe() for statistical summary
+heart_rate_avg: Average heart rate during activity
 
-Null value checks using:
+steps: Number of steps taken
 
-isna().values.any()
+sleep_hours: Hours of sleep
 
-isnull().sum()
+weight_kg: User's weight in kilograms
 
-3. Data Cleaning
+Key Features
+Data Preprocessing
+Checked for null values (none found in the original dataset)
 
-Converts the time_stamp column into a valid datetime format.
+Converted timestamp to datetime format
 
-Handles CSV inconsistencies.
+Extracted additional time features:
 
-Ensures clean and usable timestamps for feature extraction.
+Date
 
-4. Feature Engineering
+Month name
 
-New features are created from the timestamp column:
+Day of week
 
-date — Extracted date
+Hour of day
 
-month — Month name
+Feature Engineering
+Season Classification: Categorized months into seasons (Summer, Autumn, Spring)
 
-day — Day of the week
+Week Time Classification: Classified days as weekday or weekend
 
-hour — Extracted hour value
+Generation Analysis: Calculated birth year and categorized users into generations:
 
-These features make the dataset easier to analyze and visualize.
+Baby Boomers (born 1946-1964)
 
-📈 Visualizations (Depending on Notebook)
+Generation X (born 1965-1980)
 
-Although not fully visible from the preview, the imports suggest the notebook supports:
+Millennials (Gen Y) (born 1981-1996)
 
-Matplotlib static plots
+Generation Z (born 1997-2012)
 
-Plotly interactive charts
+Generation Alpha (born 2012+)
 
-These help uncover trends such as:
+Key Insights
+Activity Analysis
+HIIT burns the most calories on average (320.63 calories)
 
-Daily workout patterns
+Cycling burns the least calories on average (250.48 calories)
 
-Monthly activity variations
+Thursday is the most popular day for training (34 records)
 
-Hourly fitness behavior
+August is the most active month (43 records)
 
-🛠️ Technologies Used
-Library	Purpose
-Pandas	Data loading, cleaning, and manipulation
-NumPy	Numerical computations
-Matplotlib	Static visualizations
-Plotly	Interactive visualizations
-datetime	Timestamp transformation
+Seasonal Patterns
+Summer has the highest activity levels (109 records)
+
+Autumn follows with 52 records
+
+Spring has the least activity (39 records)
+
+Demographic Insights
+Generation X takes the most steps on average (15,687.96 steps)
+
+Generation Z takes the fewest steps on average (12,776.08 steps)
+
+Time-based Analysis
+Weekend vs Weekday: Weekends show higher average steps (15,518.27) but lower average calories burned (272.10) compared to weekdays
+
+Files
+Fitness_tracker.ipynb: Main analysis notebook
+
+random_fitness_dataset.csv: Original dataset
+
+cleaned_fitness_data.csv: Processed dataset with additional features
+
+Technologies Used
+Python
+
+Pandas (Data manipulation)
+
+NumPy (Numerical operations)
+
+Matplotlib & Plotly (Visualization)
+
+Usage
+The notebook demonstrates:
+
+Data loading and inspection
+
+Data cleaning and transformation
+
+Exploratory data analysis
+
+Feature engineering
+
+Statistical summaries and insights
+
+This analysis provides valuable insights for fitness professionals, health researchers, and anyone interested in understanding fitness patterns across different demographics and time periods.
