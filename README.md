@@ -1,70 +1,73 @@
-project:
-  name: "Fitness Data Analysis"
-  description: >
-    A Jupyter Notebook project that analyzes a random fitness dataset.
-    It covers data loading, exploration, cleaning, timestamp transformation,
-    feature engineering, and visualizations using Python.
+📊 Fitness Data Analysis Notebook
 
-libraries_used:
-  - pandas
-  - numpy
-  - datetime
-  - matplotlib
-  - plotly
+This project analyzes a randomly generated fitness dataset to explore user activity patterns, clean timestamp information, extract new time-based features, and visualize trends. The analysis is performed entirely in Python using Pandas, NumPy, Matplotlib, and Plotly.
 
-dataset:
-  file: "random_fitness_dataset.csv"
-  operations:
-    - load_dataset:
-        code: "fitness_df = pd.read_csv('random_fitness_dataset.csv')"
-    - preview_rows: "fitness_df.head(10)"
+📁 Project Overview
 
-data_exploration:
-  steps:
-    - structure_check: "fitness_df.info()"
-    - statistical_summary: "fitness_df.describe()"
-    - null_check_any: "fitness_df.isna().values.any()"
-    - null_check_count: "fitness_df.isnull().sum()"
+The notebook performs the following tasks:
 
-timestamp_cleaning:
-  convert_timestamp:
-    description: "Converts 'time_stamp' column into datetime objects"
-    code: "fitness_df['time_stamp'] = pd.to_datetime(fitness_df['time_stamp'])"
+1. Data Loading
 
-feature_engineering:
-  new_features:
-    - date:
-        description: "Extracts date part from timestamp"
-        code: "fitness_df['date'] = fitness_df['time_stamp'].dt.date"
-    - month:
-        description: "Extracts month name"
-        code: "fitness_df['month'] = fitness_df['time_stamp'].dt.month_name()"
-    - day:
-        description: "Extracts day name"
-        code: "fitness_df['day'] = fitness_df['time_stamp'].dt.day_name()"
-    - hour:
-        description: "Extracts hour of the day"
-        code: "fitness_df['hour'] = fitness_df['time_stamp'].dt.hour"
+Reads the dataset from random_fitness_dataset.csv.
 
-visualization:
-  tools:
-    - matplotlib
-    - plotly
-  purpose: >
-    Used for generating static and interactive charts to explore
-    time-based fitness patterns.
+Displays the first few rows for a quick preview.
 
-project_structure:
-  - random_fitness_dataset.csv
-  - fitness_analysis.ipynb
-  - README.md
+2. Data Exploration
 
-how_to_run:
-  install_dependencies: "pip install pandas numpy matplotlib plotly"
-  run_notebook: "jupyter notebook"
+Uses:
 
-notes:
-  - "Dataset appears synthetic and used for learning."
-  - "Notebook teaches data cleaning and timestamp manipulation."
-  - "Can be extended with correlations, trend analysis, or forecasting."
+info() to inspect data types and structure
 
+describe() for statistical summary
+
+Null value checks using:
+
+isna().values.any()
+
+isnull().sum()
+
+3. Data Cleaning
+
+Converts the time_stamp column into a valid datetime format.
+
+Handles CSV inconsistencies.
+
+Ensures clean and usable timestamps for feature extraction.
+
+4. Feature Engineering
+
+New features are created from the timestamp column:
+
+date — Extracted date
+
+month — Month name
+
+day — Day of the week
+
+hour — Extracted hour value
+
+These features make the dataset easier to analyze and visualize.
+
+📈 Visualizations (Depending on Notebook)
+
+Although not fully visible from the preview, the imports suggest the notebook supports:
+
+Matplotlib static plots
+
+Plotly interactive charts
+
+These help uncover trends such as:
+
+Daily workout patterns
+
+Monthly activity variations
+
+Hourly fitness behavior
+
+🛠️ Technologies Used
+Library	Purpose
+Pandas	Data loading, cleaning, and manipulation
+NumPy	Numerical computations
+Matplotlib	Static visualizations
+Plotly	Interactive visualizations
+datetime	Timestamp transformation
